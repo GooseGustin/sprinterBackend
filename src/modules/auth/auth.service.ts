@@ -31,7 +31,7 @@ export class AuthService {
       { expiresIn: '24h' },
     );
     
-    const verifyUrl = `http://localhost:3000/auth/verify-email?token=${token}`;
+    const verifyUrl = `http://localhost:4000/verify-email?email=${email}&token=${token}`;
     
     await sendVerificationEmail(email, verifyUrl);
     return { email, message: 'Verification link sent to email' };
